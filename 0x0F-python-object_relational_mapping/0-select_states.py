@@ -22,8 +22,11 @@ def list_states(username, password, database):
     states = cursor.fetchall()
 
     # Print the results
-    for state in states:
-        print(state)
+    if states:
+        for state in states:
+            print(state)
+    else:
+        print("No records found.")
 
     # Close cursor and connection
     cursor.close()
